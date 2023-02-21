@@ -1,0 +1,24 @@
+JavaScript Framework => Uses TypeScript, a JavaScript superset
+
+Build Client-Side (Browser) Web Apps => Single Page Applications (SPA)
+
+Highly Scalable => Can handle millions of users
+
+continuously updated => New features are added regularly by Google
+
+
+Core Concepts
+- one single HTML page (index.html) => all the content is dynamically loaded into this page
+- Components => reusable pieces of code that can be used to build UI elements
+- Modules => a container for a cohesive block of code that is related to an application domain, a workflow, or a closely related set of capabilities
+- Services => a class with a narrow, well-defined purpose
+- Dependency Injection => a way to supply a new instance of a class with the fully-formed dependencies it requires
+- Data Binding => a mechanism for coordinating parts of a template with parts of a component
+- Directives => a way to teach HTML new tricks
+- Pipes => a way to write display-value transformations that you can declare in your HTML
+- Routing => a way to navigate among different components that represent various screens or views of your application
+- Observables => a way to handle asynchronous operations
+- Forms => a way to collect and validate user input
+- HTTP => a way to communicate with a remote server over HTTP
+- Testing => a way to write tests for your application
+- Animations => a way to add motion to your application
