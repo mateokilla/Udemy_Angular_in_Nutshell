@@ -1,0 +1,22 @@
+<h1>My Products</h1>
+
+<!--[(ngModel)] for two-way data binding need import FormsModule in app.module.ts-->
+<input type="text" [(ngModel)]="productName"/>
+
+<!--(Event Binding)--> <!--[Property Binding]-->
+<button (click)="productName = 'A Toy'" [disabled]="isDisabled">Change name</button>
+<hr>
+
+<button (click)="onAddProduct()">Add Product</button> 
+
+<!--{{ Interpolation }}-->
+<div><b>{{ productName }}</b></div> 
+<hr>
+
+<!--structural directives *ngFor-->
+<div *ngFor="let product of products">{{product}}</div>
+
+
+<hr>
+<button (click)="showHide()">Show or not</button>
+<h1 *ngIf="isShowing">This is a conditional shit</h1>
