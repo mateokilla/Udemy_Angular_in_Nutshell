@@ -1,22 +1,46 @@
-<h1>My Products</h1>
+<div>
+  <h1>My Products</h1>
 
-<!--[(ngModel)] for two-way data binding need import FormsModule in app.module.ts-->
-<input type="text" [(ngModel)]="productName"/>
+  <!--[(ngModel)] for two-way data binding need import FormsModule in app.module.ts-->
+  <input type="text" [(ngModel)]="productName" />
 
-<!--(Event Binding)--> <!--[Property Binding]-->
-<button (click)="productName = 'A Toy'" [disabled]="isDisabled">Change name</button>
-<hr>
+  <!--(Event Binding)-->
+  <!--[Property Binding]-->
+  <!--<button (click)="onAddProduct()">Add Product</button>*/-->
+  <button (click)="productName = 'A Toy'" [disabled]="isDisabled">
+    Change name
+  </button>
+  <hr />
 
-<button (click)="onAddProduct()">Add Product</button> 
+  <!--{{ Interpolation }}-->
+  <div>
+    <b>{{ productName }}</b>
+  </div>
+  <p>An awesome product</p>
+  <!--Angular's FormsModule-->
+  <form (ngSubmit)="onAddProduct(f)" #f="ngForm">
+    <label
+      >Angular's FormsModule
+      <input type="text" ngModel name="productName" required
+    /></label>
+    <button type="submit">Add Product</button>
+  </form>
+  <hr />
 
-<!--{{ Interpolation }}-->
-<div><b>{{ productName }}</b></div> 
-<hr>
+  <!--structural directives *ngFor-->
+  <div *ngFor="let product of products; let i = index">
+    {{ i + 1 }}. {{ product }}
+  </div>
 
-<!--structural directives *ngFor-->
-<div *ngFor="let product of products">{{product}}</div>
+  <hr />
+  <button (click)="showHide()">{{ buttonText }}</button>
+  <!--structural directives *ngIf-->
+  <h1 *ngIf="isShowing">This is a conditional shit</h1>
+</div>
 
-
-<hr>
-<button (click)="showHide()">Show or not</button>
-<h1 *ngIf="isShowing">This is a conditional shit</h1>
+<!--Custom Property Binding-->
+<app-product
+  *ngFor="let product of products"
+  [productName]="product"
+  (productClicked)="onRemoveProduct(product)"
+></app-product>
